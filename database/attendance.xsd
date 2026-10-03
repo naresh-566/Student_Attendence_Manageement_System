@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  AttendEase - Student Attendance Management System
+  NRD Lab Experiment 6: XML Schema Definition (XSD)
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Simple Type: Percentage (0.0 to 100.0) -->
+  <xs:simpleType name="PercentageType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0.0"/>
+      <xs:maxInclusive value="100.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Simple Type: Status -->
+  <xs:simpleType name="StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Satisfactory"/>
+      <xs:enumeration value="Low Attendance"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Complex Type: Student Record -->
+  <xs:complexType name="RecordType">
+    <xs:sequence>
+      <xs:element name="roll_number" type="xs:string"/>
+      <xs:element name="student_name" type="xs:string"/>
+      <xs:element name="total_present" type="xs:nonNegativeInteger"/>
+      <xs:element name="total_absent" type="xs:nonNegativeInteger"/>
+      <xs:element name="percentage" type="PercentageType"/>
+      <xs:element name="status" type="StatusType"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <!-- Complex Type: Subject Summary -->
+  <xs:complexType name="SubjectSummaryType">
+    <xs:sequence>
+      <xs:element name="subject_code" type="xs:string"/>
+      <xs:element name="subject_name" type="xs:string"/>
+      <xs:element name="department" type="xs:string"/>
+      <xs:element name="semester" type="xs:positiveInteger"/>
+      <xs:element name="faculty_in_charge" type="xs:string"/>
+      <xs:element name="total_classes" type="xs:nonNegativeInteger"/>
+      <xs:element name="total_students" type="xs:nonNegativeInteger"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Root Element Definition -->
+  <xs:element name="attendance_report">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="institution" type="xs:string"/>
+        <xs:element name="academic_year" type="xs:string"/>
+        <xs:element name="generated_date" type="xs:date"/>
+        <xs:element name="subject_summary" type="SubjectSummaryType"/>
+        <xs:element name="records">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="record" type="RecordType" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

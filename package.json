@@ -1,0 +1,30 @@
+{
+  "name": "attendease-student-attendance-management-system",
+  "version": "1.0.0",
+  "description": "AttendEase - Student Attendance Management System",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently -n backend,frontend -c cyan,green \"npm run backend\" \"npm run frontend\"",
+    "build": "npm --prefix frontend run build",
+    "seed": "node backend/scripts/seedRunner.js"
+  },
+  "keywords": [
+    "attendance",
+    "student-management",
+    "nrd-lab",
+    "react",
+    "express",
+    "mysql",
+    "jwt",
+    "chartjs"
+  ],
+  "author": "NRD Lab Student",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}

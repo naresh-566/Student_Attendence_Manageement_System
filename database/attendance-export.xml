@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  AttendEase – Student Attendance Management System
+  NRD Lab Experiment 6: XML Document with DTD & XSD Validation
+  Sample Attendance Data Export
+-->
+<!DOCTYPE attendance_report SYSTEM "attendance.dtd">
+<attendance_report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="attendance.xsd">
+  <institution>Department of Computer Science &amp; Engineering</institution>
+  <academic_year>2026-2027</academic_year>
+  <generated_date>2026-09-30</generated_date>
+
+  <subject_summary>
+    <subject_code>CS501</subject_code>
+    <subject_name>Web Technologies</subject_name>
+    <department>Computer Science &amp; Engineering</department>
+    <semester>5</semester>
+    <faculty_in_charge>Dr. Ramesh Kumar</faculty_in_charge>
+    <total_classes>40</total_classes>
+    <total_students>18</total_students>
+  </subject_summary>
+
+  <records>
+    <record id="1">
+      <roll_number>21CS101</roll_number>
+      <student_name>Rahul Sharma</student_name>
+      <total_present>36</total_present>
+      <total_absent>4</total_absent>
+      <percentage>90.0</percentage>
+      <status>Satisfactory</status>
+    </record>
+    <record id="2">
+      <roll_number>21CS102</roll_number>
+      <student_name>Priya Patel</student_name>
+      <total_present>38</total_present>
+      <total_absent>2</total_absent>
+      <percentage>95.0</percentage>
+      <status>Satisfactory</status>
+    </record>
+    <record id="3">
+      <roll_number>21CS103</roll_number>
+      <student_name>Amit Verma</student_name>
+      <total_present>28</total_present>
+      <total_absent>12</total_absent>
+      <percentage>70.0</percentage>
+      <status>Low Attendance</status>
+    </record>
+    <record id="4">
+      <roll_number>21CS104</roll_number>
+      <student_name>Sneha Reddy</student_name>
+      <total_present>35</total_present>
+      <total_absent>5</total_absent>
+      <percentage>87.5</percentage>
+      <status>Satisfactory</status>
+    </record>
+    <record id="5">
+      <roll_number>21CS105</roll_number>
+      <student_name>Karan Malhotra</student_name>
+      <total_present>26</total_present>
+      <total_absent>14</total_absent>
+      <percentage>65.0</percentage>
+      <status>Low Attendance</status>
+    </record>
+  </records>
+</attendance_report>

@@ -1,0 +1,29 @@
+<!-- 
+  AttendEase - Student Attendance Management System
+  NRD Lab Experiment 6: XML with DTD Validation
+  Document Type Definition for Attendance Data Export
+-->
+<!ELEMENT attendance_report (institution, academic_year, generated_date, subject_summary, records)>
+<!ELEMENT institution (#PCDATA)>
+<!ELEMENT academic_year (#PCDATA)>
+<!ELEMENT generated_date (#PCDATA)>
+
+<!ELEMENT subject_summary (subject_code, subject_name, department, semester, faculty_in_charge, total_classes, total_students)>
+<!ELEMENT subject_code (#PCDATA)>
+<!ELEMENT subject_name (#PCDATA)>
+<!ELEMENT department (#PCDATA)>
+<!ELEMENT semester (#PCDATA)>
+<!ELEMENT faculty_in_charge (#PCDATA)>
+<!ELEMENT total_classes (#PCDATA)>
+<!ELEMENT total_students (#PCDATA)>
+
+<!ELEMENT records (record+)>
+<!ELEMENT record (roll_number, student_name, total_present, total_absent, percentage, status)>
+<!ATTLIST record id CDATA #REQUIRED>
+
+<!ELEMENT roll_number (#PCDATA)>
+<!ELEMENT student_name (#PCDATA)>
+<!ELEMENT total_present (#PCDATA)>
+<!ELEMENT total_absent (#PCDATA)>
+<!ELEMENT percentage (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
