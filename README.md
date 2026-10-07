@@ -753,3 +753,7 @@ React + Vite + Node.js + Express + MySQL
 This project was developed as an academic project to demonstrate the use of modern web technologies for managing student attendance efficiently.
 
 If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
+SYSTEM ARCHITECTURE
+<img width="5113" height="8192" alt="Student Attendance-2026-10-07-052653" src="https://github.com/user-attachments/assets/c80014d2-9516-4cf6-81d1-0b4cb853db44" />
+
